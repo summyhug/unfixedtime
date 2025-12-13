@@ -1,0 +1,27 @@
+.footer {
+  background-color: var(--forest-green);
+  color: var(--soft-white);
+  padding: var(--spacing-xxl) 0;
+  margin-top: var(--spacing-xxxl);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-l);
+  text-align: center;
+}
+
+.text {
+  color: var(--soft-white);
+  margin-bottom: var(--spacing-s);
+  font-size: 0.9rem;
+}
+
+.subtext {
+  color: var(--sage-green);
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+

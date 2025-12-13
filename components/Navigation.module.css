@@ -1,0 +1,152 @@
+.nav {
+  background-color: var(--soft-white);
+  border-bottom: 1px solid var(--cream);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background-color: rgba(250, 249, 246, 0.95);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--spacing-m) var(--spacing-l);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--forest-green);
+  font-family: var(--font-heading);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-s);
+}
+
+.logoImage {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+.navLink {
+  color: var(--warm-gray);
+  font-weight: 500;
+  padding: var(--spacing-s) 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: var(--forest-green);
+}
+
+.navLink.active {
+  color: var(--forest-green);
+}
+
+.navLink.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--sage-green);
+  border-radius: 2px;
+}
+
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-s);
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 24px;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--forest-green);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.hamburger span.open:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger span.open:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger span.open:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+@media (max-width: 768px) {
+  .menuButton {
+    display: block;
+  }
+
+  .navList {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--soft-white);
+    flex-direction: column;
+    padding: var(--spacing-l);
+    gap: var(--spacing-m);
+    border-top: 1px solid var(--cream);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .navList.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .navLink {
+    width: 100%;
+    text-align: center;
+    padding: var(--spacing-m);
+  }
+}
+

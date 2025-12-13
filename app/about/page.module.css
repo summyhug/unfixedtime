@@ -1,0 +1,125 @@
+.about {
+  min-height: 100vh;
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--cream) 0%, var(--sage-green) 100%);
+  padding: var(--spacing-xxxl) 0;
+  text-align: center;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-l);
+}
+
+.title {
+  font-size: 3rem;
+  color: var(--forest-green);
+  margin: 0;
+}
+
+.section {
+  padding: var(--spacing-xxxl) 0;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.textContent h2 {
+  font-size: 2rem;
+  color: var(--forest-green);
+  margin-top: 0;
+  margin-bottom: var(--spacing-l);
+}
+
+.textContent h3 {
+  font-size: 1.5rem;
+  color: var(--forest-green);
+  margin-top: var(--spacing-xxl);
+  margin-bottom: var(--spacing-m);
+}
+
+.leaderCard {
+  margin-top: var(--spacing-l);
+  padding: var(--spacing-xl);
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--soft-white) 0%, var(--cream) 100%);
+  border: 1px solid var(--cream);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.leaderHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--spacing-m);
+  margin-bottom: var(--spacing-m);
+}
+
+.leaderName {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  color: var(--forest-green);
+  font-size: 1.2rem;
+}
+
+.leaderTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--sage-green);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.leaderBlurb {
+  margin: 0;
+  color: var(--warm-gray);
+  line-height: 1.7;
+}
+
+.textContent p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--warm-gray);
+  margin-bottom: var(--spacing-l);
+}
+
+.valuesList {
+  list-style: none;
+  padding: 0;
+  margin: var(--spacing-l) 0;
+}
+
+.valuesList li {
+  padding: var(--spacing-m);
+  margin-bottom: var(--spacing-m);
+  background-color: var(--cream);
+  border-radius: 8px;
+  border-left: 4px solid var(--sage-green);
+}
+
+.valuesList li strong {
+  color: var(--forest-green);
+  display: block;
+  margin-bottom: var(--spacing-xs);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .textContent h2 {
+    font-size: 1.75rem;
+  }
+
+  .textContent p {
+    font-size: 1rem;
+  }
+}
+
+
