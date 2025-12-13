@@ -10,17 +10,18 @@ function normalizeSiteHost(siteUrl: string): string {
   return withoutProtocol.split('/')[0];
 }
 
-function wpJsonUrl(path: string) {
-  return `${WORDPRESS_URL}${path}`;
+function wpJsonBase(): string {
+  return `${WORDPRESS_URL.replace(/\/+$/, '')}/wp-json/wp/v2`;
 }
 
-function wpComApiUrl(path: string) {
+function wpComBase(): string {
   const site = normalizeSiteHost(WORDPRESS_URL);
   // WordPress.com REST API (works even when /wp-json is not exposed on the mapped domain)
-  return `https://public-api.wordpress.com/wp/v2/sites/${site}${path}`;
+  return `https://public-api.wordpress.com/wp/v2/sites/${site}`;
 }
 
 async function wpGet<T>(path: string, params?: Record<string, unknown>): Promise<T> {
+  // `path` is a WP v2 resource path like "/posts" or "/media"
   // If user explicitly sets an API base, use it.
   if (WORDPRESS_API_BASE) {
     const base = WORDPRESS_API_BASE.replace(/\/+$/, '');
@@ -30,13 +31,13 @@ async function wpGet<T>(path: string, params?: Record<string, unknown>): Promise
 
   // Try wp-json first (self-hosted WP / many WP.com sites)
   try {
-    const res = await axios.get<T>(wpJsonUrl(path), { params });
+    const res = await axios.get<T>(`${wpJsonBase()}${path}`, { params });
     return res.data;
   } catch (err: unknown) {
     // If wp-json 404s (common on some WordPress.com mapped domains), fall back to wp.com API.
     const status = axios.isAxiosError(err) ? err.response?.status : undefined;
     if (status === 404) {
-      const res = await axios.get<T>(wpComApiUrl(path), { params });
+      const res = await axios.get<T>(`${wpComBase()}${path}`, { params });
       return res.data;
     }
     throw err;
@@ -94,10 +95,11 @@ export interface Project {
 // Fetch blog posts from WordPress
 export async function getBlogPosts(limit: number = 10): Promise<WordPressPost[]> {
   try {
-    return await wpGet<WordPressPost[]>('/wp-json/wp/v2/posts', {
+    const data = await wpGet<WordPressPost[]>('/posts', {
       per_page: limit,
       _embed: true,
     });
+    return Array.isArray(data) ? data : [];
   } catch (error) {
     console.error('Error fetching blog posts:', error);
     return [];
@@ -107,7 +109,7 @@ export async function getBlogPosts(limit: number = 10): Promise<WordPressPost[]>
 // Fetch a single blog post by slug
 export async function getBlogPost(slug: string): Promise<WordPressPost | null> {
   try {
-    const data = await wpGet<WordPressPost[]>('/wp-json/wp/v2/posts', {
+    const data = await wpGet<WordPressPost[]>('/posts', {
       slug,
       _embed: true,
     });
@@ -121,10 +123,11 @@ export async function getBlogPost(slug: string): Promise<WordPressPost | null> {
 // Fetch media/photos from WordPress
 export async function getPhotos(limit: number = 20): Promise<WordPressMedia[]> {
   try {
-    return await wpGet<WordPressMedia[]>('/wp-json/wp/v2/media', {
+    const data = await wpGet<WordPressMedia[]>('/media', {
       per_page: limit,
       media_type: 'image',
     });
+    return Array.isArray(data) ? data : [];
   } catch (error) {
     console.error('Error fetching photos:', error);
     return [];
