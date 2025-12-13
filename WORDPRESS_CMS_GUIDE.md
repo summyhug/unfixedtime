@@ -27,7 +27,9 @@ Beautiful Modern UI
   - Schedule posts
   - Everything you normally do in WordPress!
 
-**API Endpoint Used**: `https://unfixedtime.com/wp-json/wp/v2/posts`
+**API Endpoint Used**:
+- Primary (self-hosted / many sites): `https://unfixedtime.com/wp-json/wp/v2/posts`
+- WordPress.com fallback (mapped domains that 404 on `/wp-json`): `https://public-api.wordpress.com/wp/v2/sites/unfixedtime.com/posts`
 
 ### 2. **Photos/Media**
 - **Location**: WordPress Admin → Media Library
@@ -38,7 +40,9 @@ Beautiful Modern UI
   - Organize with folders/categories
   - All photos automatically appear on your portfolio site
 
-**API Endpoint Used**: `https://unfixedtime.com/wp-json/wp/v2/media`
+**API Endpoint Used**:
+- Primary (self-hosted / many sites): `https://unfixedtime.com/wp-json/wp/v2/media`
+- WordPress.com fallback (mapped domains that 404 on `/wp-json`): `https://public-api.wordpress.com/wp/v2/sites/unfixedtime.com/media`
 
 ### 3. **Featured Images**
 - **Location**: Set when creating/editing posts
@@ -189,6 +193,15 @@ NEXT_PUBLIC_WORDPRESS_URL=https://unfixedtime.com
 ```
 
 This tells the Next.js site where to fetch content from.
+
+### Optional: Explicit API Base (recommended for WordPress.com mapped domains)
+
+If your site returns a 404 for `https://unfixedtime.com/wp-json/wp/v2/posts` on the public internet (this can happen on some WordPress.com configurations),
+set this env var in Vercel (and optionally `.env.local`) to force the API base:
+
+```
+NEXT_PUBLIC_WORDPRESS_API_BASE=https://public-api.wordpress.com/wp/v2/sites/unfixedtime.com
+```
 
 ## Caching & Performance
 

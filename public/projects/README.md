@@ -2,6 +2,19 @@
 
 Place your project thumbnail images here:
 
+- `velyar.png` - Thumbnail for Velyar project
+- `archium.png` - Thumbnail for Archium project
+- `logo.svg` - Header logo
+
+Images should be:
+- Format: PNG or JPG for thumbnails (WebP is also great)
+- Recommended size: 1200px wide or larger
+- Optimized for web (compressed but high quality)
+
+# Project Images
+
+Place your project thumbnail images here:
+
 - `velyar-thumbnail.jpg` - Thumbnail for Velyar project
 - `archium-thumbnail.jpg` - Thumbnail for Archium project
 
