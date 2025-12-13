@@ -22,6 +22,14 @@
   background-color: var(--cream);
 }
 
+.stackedCard {
+  border-radius: 18px;
+}
+
+.stackedImage {
+  height: 420px;
+}
+
 .image {
   object-fit: cover;
   transition: transform 0.3s ease;
@@ -88,6 +96,10 @@
 @media (max-width: 768px) {
   .imageContainer {
     height: 250px;
+  }
+
+  .stackedImage {
+    height: 320px;
   }
   
   .content {

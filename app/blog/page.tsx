@@ -1,62 +1,32 @@
-import Link from 'next/link';
-import { getBlogPosts, getFeaturedImageUrl } from '@/lib/wordpress';
-import Image from 'next/image';
+import { getBlogPosts } from '@/lib/wordpress';
+import TravelsGrid from '@/components/TravelsGrid';
 import styles from './page.module.css';
 
-export default async function Blog() {
-  const posts = await getBlogPosts(20);
+export default async function Blog({
+  searchParams,
+}: {
+  searchParams?: { page?: string };
+}) {
+  // Initial load: “4 rows” on desktop ~= 12 tiles. More is loaded as you scroll.
+  const posts = await getBlogPosts(12, 1);
 
   return (
     <div className={styles.travels}>
       <header className={styles.header}>
         <div className={styles.container}>
-          <h1 className={styles.title}>Travels</h1>
-          <p className={styles.subtitle}>Stories and images from places we’ve been fortunate to visit.</p>
+          <div className={styles.headerInner}>
+            <p className={styles.headerBlurb}>
+              Unfixedtime started as a photo blog - a way to share Sumit’s travels with friends and family back home.
+              Along the way, those journeys sparked a deeper focus on sustainability, and Unfixedtime evolved into a
+              product studio where we build at the intersection of product, AI, and long-term impact.
+            </p>
+          </div>
         </div>
       </header>
-
       <section className={styles.section}>
         <div className={styles.container}>
           {posts.length > 0 ? (
-            <div className={styles.list}>
-              {posts.map((post) => {
-                const featuredImage = getFeaturedImageUrl(post);
-                const date = new Date(post.date).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                });
-
-                return (
-                  <article key={post.id} className={styles.item}>
-                    <Link href={`/blog/${post.slug}`} className={styles.itemLink}>
-                      <div className={styles.media}>
-                        {featuredImage ? (
-                          <Image
-                            src={featuredImage}
-                            alt={post.title.rendered}
-                            fill
-                            className={styles.image}
-                            sizes="(max-width: 768px) 100vw, 1100px"
-                            priority={false}
-                          />
-                        ) : (
-                          <div className={styles.imageFallback} aria-hidden="true" />
-                        )}
-                        <div className={styles.overlay} aria-hidden="true" />
-                        <div className={styles.meta}>
-                          <div className={styles.metaTop}>
-                            <span className={styles.kicker}>Travels</span>
-                            <time className={styles.date}>{date}</time>
-                          </div>
-                          <h2 className={styles.postTitle}>{post.title.rendered}</h2>
-                        </div>
-                      </div>
-                    </Link>
-                  </article>
-                );
-              })}
-            </div>
+            <TravelsGrid initialPosts={posts} />
           ) : (
             <div className={styles.empty}>
               <p>No travel stories available at the moment.</p>

@@ -10,9 +10,6 @@ export default function Projects() {
       <section className={styles.hero}>
         <div className={styles.container}>
           <h1 className={styles.title}>Projects</h1>
-          <p className={styles.subtitle}>
-            Sustainable initiatives and design projects we’re building
-          </p>
         </div>
       </section>
 
@@ -20,7 +17,7 @@ export default function Projects() {
         <div className={styles.container}>
           <div className={styles.projectsGrid}>
             {projects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
+              <ProjectCard key={project.id} project={project} variant="stacked" />
             ))}
           </div>
         </div>

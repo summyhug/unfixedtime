@@ -17,14 +17,7 @@
 .title {
   font-size: 3rem;
   color: var(--forest-green);
-  margin: 0 0 var(--spacing-m) 0;
-}
-
-.subtitle {
-  font-size: 1.25rem;
-  color: var(--warm-gray);
-  max-width: 600px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .section {
@@ -33,17 +26,13 @@
 
 .projectsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr;
   gap: var(--spacing-xl);
 }
 
 @media (max-width: 768px) {
   .title {
     font-size: 2rem;
-  }
-
-  .subtitle {
-    font-size: 1.1rem;
   }
 
   .projectsGrid {

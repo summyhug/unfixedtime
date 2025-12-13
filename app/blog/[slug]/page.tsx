@@ -1,4 +1,4 @@
-import { getBlogPost, getBlogPosts, getFeaturedImageUrl } from '@/lib/wordpress';
+import { getBlogPost, getBlogPosts, getFeaturedImageUrl, wpTextToPlainText } from '@/lib/wordpress';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -23,6 +23,7 @@ export default async function BlogPost({
   }
 
   const featuredImage = getFeaturedImageUrl(post);
+  const titleText = wpTextToPlainText(post.title.rendered);
 
   return (
     <article className={styles.post}>
@@ -32,7 +33,7 @@ export default async function BlogPost({
         </Link>
 
         <header className={styles.header}>
-          <h1 className={styles.title}>{post.title.rendered}</h1>
+          <h1 className={styles.title}>{titleText}</h1>
           <time className={styles.date}>
             {new Date(post.date).toLocaleDateString('en-US', {
               year: 'numeric',
@@ -46,7 +47,7 @@ export default async function BlogPost({
           <div className={styles.featuredImage}>
             <Image
               src={featuredImage}
-              alt={post.title.rendered}
+              alt={titleText}
               width={1200}
               height={600}
               className={styles.image}

@@ -9,6 +9,7 @@ export const projects: Project[] = [
     thumbnail: '/projects/velyar.png',
     link: 'https://velyar.com', // Update with actual link
     tags: ['Sustainability', 'Platform', 'Design'],
+    featured: true,
   },
   {
     id: 'archium',
@@ -17,6 +18,16 @@ export const projects: Project[] = [
     thumbnail: '/projects/archium.png',
     link: 'https://archium.com', // Update with actual link
     tags: ['Architecture', 'Design', 'Sustainability'],
+    featured: true,
+  },
+  {
+    id: 'atmo',
+    title: 'atmo',
+    description: 'Transforming agricultural data into financed climate action using AI.',
+    thumbnail: '/projects/atmo.png',
+    link: 'https://www.atmo.earth/',
+    tags: ['Climate', 'AI', 'Sustainability'],
+    featured: false,
   },
 ];
 

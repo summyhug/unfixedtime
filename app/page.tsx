@@ -4,7 +4,7 @@ import ProjectCard from '@/components/ProjectCard';
 import styles from './page.module.css';
 
 export default function Home() {
-  const projects = getAllProjects();
+  const projects = getAllProjects().filter((p) => p.featured);
 
   return (
     <div className={styles.home}>
@@ -12,13 +12,13 @@ export default function Home() {
       <section className={styles.hero}>
         <div className={styles.heroContainer}>
           <div className={styles.heroContent}>
-            <div className={styles.badge}>Venture Builder • Product & AI</div>
+            <div className={styles.badge}>Product Studio • Product & AI</div>
             <h1 className={styles.heroTitle}>
               We build the future with
               <span className={styles.highlight}> AI & Sustainability</span>
             </h1>
             <p className={styles.heroSubtitle}>
-              We build and scale products that use AI responsibly—designed for real human needs and
+              We build and scale products that use AI responsibly - designed for real human needs and
               long-term impact on a thriving planet.
             </p>
             <div className={styles.heroActions}>
@@ -54,12 +54,12 @@ export default function Home() {
             <div className={styles.expertiseCard}>
               <div className={styles.expertiseIcon}>🎯</div>
               <h3>Product Strategy</h3>
-              <p>We shape product vision from concept to market—grounded in user outcomes, clarity, and sustainable growth.</p>
+              <p>We shape product vision from concept to market - grounded in user outcomes, clarity, and sustainable growth.</p>
             </div>
             <div className={styles.expertiseCard}>
               <div className={styles.expertiseIcon}>🤖</div>
               <h3>AI & Machine Learning</h3>
-              <p>We ship AI-powered experiences that solve real problems—reliable, measurable, and built for trust.</p>
+              <p>We ship AI-powered experiences that solve real problems - reliable, measurable, and built for trust.</p>
             </div>
             <div className={styles.expertiseCard}>
               <div className={styles.expertiseIcon}>🌍</div>

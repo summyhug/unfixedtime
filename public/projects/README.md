@@ -2,10 +2,10 @@
 
 Assets used by the site live in this folder:
 
-- `logo.svg` – site logo used in the top navigation
-- `favicon.ico` – source favicon you added (copied to `app/favicon.ico` and `public/favicon.ico`)
-- `velyar.png` – project thumbnail
-- `archium.png` – project thumbnail
+- `logo.svg` - site logo used in the top navigation
+- `favicon.ico` - source favicon you added (copied to `app/favicon.ico` and `public/favicon.ico`)
+- `velyar.png` - project thumbnail
+- `archium.png` - project thumbnail
 
 # Project Images
 

@@ -90,13 +90,51 @@ export interface Project {
   thumbnail: string;
   link?: string;
   tags?: string[];
+  featured?: boolean;
+}
+
+function decodeHtmlEntities(input: string): string {
+  // Minimal entity decoder (enough for WP titles/excerpts in plain-text rendering)
+  const named: Record<string, string> = {
+    amp: '&',
+    lt: '<',
+    gt: '>',
+    quot: '"',
+    apos: "'",
+    nbsp: ' ',
+    '#39': "'",
+  };
+
+  return input
+    .replace(/&(#x[0-9a-fA-F]+|#\d+|[a-zA-Z]+);/g, (match, entity) => {
+      if (entity in named) return named[entity];
+      if (entity.startsWith('#x')) {
+        const code = Number.parseInt(entity.slice(2), 16);
+        if (Number.isFinite(code)) return String.fromCodePoint(code);
+      }
+      if (entity.startsWith('#')) {
+        const code = Number.parseInt(entity.slice(1), 10);
+        if (Number.isFinite(code)) return String.fromCodePoint(code);
+      }
+      // Unknown entity — keep as-is
+      return match;
+    });
+}
+
+export function wpTextToPlainText(input: string): string {
+  // WP often returns HTML + entities. We want plain text for React-rendered headings/alt text.
+  const withoutTags = input.replace(/<[^>]*>/g, '');
+  const decoded = decodeHtmlEntities(withoutTags);
+  // Normalize typographic dashes to a plain hyphen for consistency.
+  return decoded.replace(/[\u2013\u2014]/g, '-');
 }
 
 // Fetch blog posts from WordPress
-export async function getBlogPosts(limit: number = 10): Promise<WordPressPost[]> {
+export async function getBlogPosts(limit: number = 10, page: number = 1): Promise<WordPressPost[]> {
   try {
     const data = await wpGet<WordPressPost[]>('/posts', {
       per_page: limit,
+      page,
       _embed: true,
     });
     return Array.isArray(data) ? data : [];

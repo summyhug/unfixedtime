@@ -15,29 +15,32 @@ export default function About() {
             <div className={styles.textContent}>
               <h2>We build products with purpose</h2>
               <p>
-                Unfixedtime is our venture studio—a space where we build, learn, and share.
+                Unfixedtime is our product studio - a space where we build, learn, and share.
                 We work at the intersection of product strategy, AI, and sustainability, with a belief
                 that good products should improve lives and respect the planet.
               </p>
               <p>
-                The travel journal began during our time in Germany and grew into a broader story:
+                The travel journal began during Sumit's time in Germany and grew into a broader story:
                 how we explore the world, how we think about impact, and how we choose what to build.
+                With a passion for sustainable travel and interest understanding how the world works,
+                Unfixedtime became a home for AI created projects in the sustainability space.
               </p>
               <p>
                 Through projects like Velyar and Archium, we’re exploring how to build a more sustainable future
-                while maintaining harmony with our natural environment. Each project is an opportunity to learn,
-                iterate, and contribute to a better world.
+                while maintaining harmony with our natural environment. Sustainability spreads across both 
+                environmental and social sustainability, along with products that can nudge us towards a more 
+                sustainable future. Each project is an opportunity to learn, iterate, and contribute to a better world.
               </p>
 
               <h3>Leadership</h3>
               <div className={styles.leaderCard}>
                 <div className={styles.leaderHeader}>
-                  <div className={styles.leaderName}>Sumit Mehta</div>
+                  <div className={styles.leaderName}>Sumit Hug</div>
                   <div className={styles.leaderTitle}>CEO</div>
                 </div>
                 <p className={styles.leaderBlurb}>
                   Sumit leads Unfixedtime as CEO. He’s a product leader with deep experience building and scaling
-                  AI-powered products—bringing together strategy, design, and execution to ship work that stands out.
+                  AI-powered products - bringing together strategy, design, and execution to ship work that stands out.
                 </p>
               </div>
 
@@ -61,7 +64,7 @@ export default function About() {
                 </li>
               </ul>
               <p>
-                Thanks for visiting—welcome to what we’re building.
+                Thanks for visiting - welcome to what we’re building.
               </p>
             </div>
           </div>
