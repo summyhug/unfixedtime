@@ -9,7 +9,7 @@ export default function PrivacyPage() {
     <div className={styles.page}>
       <div className={styles.container}>
         <h1 className={styles.title}>Privacy Policy</h1>
-        <p className={styles.updated}>Last updated: <em>[add date]</em></p>
+        <p className={styles.updated}>Last updated: <em>December 13, 2025</em></p>
 
         <section className={styles.section}>
           <h2>1. Controller</h2>
@@ -53,7 +53,7 @@ export default function PrivacyPage() {
         <section className={styles.section}>
           <h2>6. Contact</h2>
           <p>
-            For privacy-related requests, contact: <em>[add privacy contact email]</em>
+            For privacy-related requests, contact: <a href="mailto:sumit@unfixedtime.com">sumit@unfixedtime.com</a>
           </p>
         </section>
       </div>

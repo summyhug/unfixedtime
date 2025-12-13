@@ -10,7 +10,7 @@ export default function TermsPage() {
       <div className={styles.container}>
         <h1 className={styles.title}>Terms & Conditions</h1>
 
-        <p className={styles.updated}>Last updated: <em>[add date]</em></p>
+        <p className={styles.updated}>Last updated: <em>December 13, 2025</em></p>
 
         <section className={styles.section}>
           <h2>1. Operator</h2>

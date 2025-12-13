@@ -22,10 +22,10 @@ export default function ImprintPage() {
         <section className={styles.section}>
           <h2>Contact</h2>
           <p>
-            Email: <em>[add contact email]</em>
+            Email: <a href="mailto:sumit@unfixedtime.com">sumit@unfixedtime.com</a>
           </p>
           <p>
-            Address: <em>[add registered address]</em>
+            Address: Urbanstr 133, 10967 Berlin
           </p>
         </section>
 
