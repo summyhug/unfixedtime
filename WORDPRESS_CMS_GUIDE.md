@@ -16,7 +16,7 @@ Beautiful Modern UI
 
 ## What You Can Manage in WordPress
 
-### 1. **Blog Posts** (Travel Blog)
+### 1. **Blog Posts** (Travels)
 - **Location**: WordPress Admin → Posts
 - **What it powers**: `/blog` page and individual blog post pages
 - **You can manage**:
@@ -33,12 +33,11 @@ Beautiful Modern UI
 
 ### 2. **Photos/Media**
 - **Location**: WordPress Admin → Media Library
-- **What it powers**: `/photos` page
+- **How we use it**: Featured images and media inside travel posts (and future galleries if needed)
 - **You can manage**:
   - Upload photos to Media Library
   - Add alt text for accessibility
-  - Organize with folders/categories
-  - All photos automatically appear on your portfolio site
+  - Attach media to posts
 
 **API Endpoint Used**:
 - Primary (self-hosted / many sites): `https://unfixedtime.com/wp-json/wp/v2/media`
@@ -68,25 +67,12 @@ const posts = await getBlogPosts(20);
 - Excerpt
 
 **Where it appears:**
-- `/blog` - Blog listing page
-- `/blog/[slug]` - Individual blog post pages
+- `/blog` - Travels listing page
+- `/blog/[slug]` - Individual travel pages
 
-### Photos Integration
+### Media Integration
 
-The site automatically fetches images from your WordPress Media Library:
-
-```typescript
-// Fetches latest 30 images
-const photos = await getPhotos(30);
-```
-
-**What gets displayed:**
-- All images from your Media Library
-- Alt text (if set)
-- Optimized image sizes
-
-**Where it appears:**
-- `/photos` - Photo gallery page
+The site fetches media (images) primarily for featured images and post content.
 
 ## Workflow
 

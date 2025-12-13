@@ -21,7 +21,6 @@ export default function Footer() {
           <Link className={styles.link} href="/terms">Terms</Link>
           <Link className={styles.link} href="/privacy">Privacy</Link>
         </nav>
-        <p className={styles.subtext}>Unfixedtime UG • District Court of Charlottenburg (Berlin) • HRB 275754 B</p>
       </div>
     </footer>
   );

@@ -28,7 +28,7 @@ export default async function BlogPost({
     <article className={styles.post}>
       <div className={styles.container}>
         <Link href="/blog" className={styles.backLink}>
-          ← Back to Blog
+          ← Back to Travels
         </Link>
 
         <header className={styles.header}>

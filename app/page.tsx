@@ -109,18 +109,10 @@ export default function Home() {
               </div>
               <div className={styles.quickLinkArrow}>→</div>
             </Link>
-            <Link href="/photos" className={styles.quickLink}>
-              <div className={styles.quickLinkIcon}>📸</div>
-              <div className={styles.quickLinkContent}>
-                <h3>Photos</h3>
-                <p>Visual stories from our travels and experiences</p>
-              </div>
-              <div className={styles.quickLinkArrow}>→</div>
-            </Link>
             <Link href="/blog" className={styles.quickLink}>
               <div className={styles.quickLinkIcon}>✈️</div>
               <div className={styles.quickLinkContent}>
-                <h3>Travel Blog</h3>
+                <h3>Travels</h3>
                 <p>Stories and insights from around the world</p>
               </div>
               <div className={styles.quickLinkArrow}>→</div>

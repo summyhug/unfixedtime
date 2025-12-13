@@ -120,7 +120,7 @@ export async function getBlogPost(slug: string): Promise<WordPressPost | null> {
   }
 }
 
-// Fetch media/photos from WordPress
+// Fetch media/images from WordPress
 export async function getPhotos(limit: number = 20): Promise<WordPressMedia[]> {
   try {
     const data = await wpGet<WordPressMedia[]>('/media', {

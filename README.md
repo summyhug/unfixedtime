@@ -8,7 +8,7 @@ A modern portfolio website built with Next.js and WordPress API integration, fea
 - **About**: Personal information and values
 - **Projects**: Detailed project showcase page
 - **Photos**: Integration with WordPress-hosted photos via REST API
-- **Travel Blog**: WordPress-powered blog section with individual post pages
+- **Travels**: WordPress-powered travel section with individual post pages
 - **Sustainability Theme**: Complete brand-focused design system with harmony and sustainability
 
 ## Getting Started
