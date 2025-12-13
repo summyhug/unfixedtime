@@ -18,6 +18,29 @@
   font-size: 0.9rem;
 }
 
+.links {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-l);
+  margin: var(--spacing-m) 0 var(--spacing-l);
+  flex-wrap: wrap;
+}
+
+.link {
+  color: rgba(250, 249, 246, 0.9);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(250, 249, 246, 0.25);
+  padding-bottom: 2px;
+  transition: all 0.2s ease;
+}
+
+.link:hover {
+  color: var(--soft-white);
+  border-bottom-color: rgba(250, 249, 246, 0.8);
+}
+
 .subtext {
   color: var(--sage-green);
   font-size: 0.8rem;

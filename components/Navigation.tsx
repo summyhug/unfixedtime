@@ -24,13 +24,13 @@ export default function Navigation() {
         <Link href="/" className={styles.logo}>
           <Image
             src="/projects/logo.svg"
-            alt="Unfixed Time"
+            alt="Unfixedtime"
             width={36}
             height={36}
             priority
             className={styles.logoImage}
           />
-          <span className={styles.srOnly}>Unfixed Time</span>
+          <span className={styles.srOnly}>Unfixedtime</span>
         </Link>
         
         <button

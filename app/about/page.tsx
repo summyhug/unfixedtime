@@ -15,7 +15,7 @@ export default function About() {
             <div className={styles.textContent}>
               <h2>We build products with purpose</h2>
               <p>
-                Unfixed Time is our venture studio—a space where we build, learn, and share.
+                Unfixedtime is our venture studio—a space where we build, learn, and share.
                 We work at the intersection of product strategy, AI, and sustainability, with a belief
                 that good products should improve lives and respect the planet.
               </p>
@@ -36,7 +36,7 @@ export default function About() {
                   <div className={styles.leaderTitle}>CEO</div>
                 </div>
                 <p className={styles.leaderBlurb}>
-                  Sumit leads Unfixed Time as CEO. He’s a product leader with deep experience building and scaling
+                  Sumit leads Unfixedtime as CEO. He’s a product leader with deep experience building and scaling
                   AI-powered products—bringing together strategy, design, and execution to ship work that stands out.
                 </p>
               </div>

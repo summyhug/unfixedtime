@@ -1,10 +1,10 @@
-# Unfixed Time - Brand Guide
+# Unfixedtime - Brand Guide
 
 ## Brand Philosophy
 
 **Sustainability & Harmony**
 
-Unfixed Time embodies a philosophy of sustainable living, mindful design, and harmonious balance. The brand reflects a deep appreciation for natural beauty, thoughtful craftsmanship, and the interconnectedness of our world.
+Unfixedtime embodies a philosophy of sustainable living, mindful design, and harmonious balance. The brand reflects a deep appreciation for natural beauty, thoughtful craftsmanship, and the interconnectedness of our world.
 
 **Modern & Vibrant Expression**
 

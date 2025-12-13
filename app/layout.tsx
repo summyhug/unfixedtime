@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 import '@/styles/globals.css';
 
 export const metadata: Metadata = {
-  title: 'Unfixed Time - Portfolio & Travel Blog',
+  title: 'Unfixedtime - Portfolio & Travel Blog',
   description: 'A portfolio showcasing sustainable projects and travel experiences',
   keywords: ['portfolio', 'sustainability', 'travel', 'photography'],
 };

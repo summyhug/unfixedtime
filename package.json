@@ -1,7 +1,7 @@
 {
   "name": "unfixedtime-portfolio",
   "version": "1.0.0",
-  "description": "Portfolio site for Unfixed Time with WordPress API integration",
+  "description": "Portfolio site for Unfixedtime with WordPress API integration",
   "private": true,
   "scripts": {
     "dev": "next dev",

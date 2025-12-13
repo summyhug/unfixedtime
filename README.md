@@ -1,4 +1,4 @@
-# Unfixed Time Portfolio
+# Unfixedtime Portfolio
 
 A modern portfolio website built with Next.js and WordPress API integration, featuring a sustainability-focused design system.
 
