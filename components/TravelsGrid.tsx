@@ -17,7 +17,7 @@ type ApiResponse = {
 export default function TravelsGrid({ initialPosts }: { initialPosts: WordPressPost[] }) {
   const [posts, setPosts] = useState<WordPressPost[]>(initialPosts);
   const [page, setPage] = useState(1);
-  const [hasMore, setHasMore] = useState(initialPosts.length > 0);
+  const [hasMore, setHasMore] = useState(initialPosts.length === 12);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [columns, setColumns] = useState(3);

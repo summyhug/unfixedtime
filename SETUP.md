@@ -69,3 +69,5 @@ Add new project objects to the `projects` array in `lib/projects.ts`.
 4. Deploy to Vercel or your preferred hosting platform
 
 
+
+
