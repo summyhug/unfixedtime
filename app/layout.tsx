@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import CookieConsent from '@/components/CookieConsent';
 import '@/styles/globals.css';
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <CookieConsent />
         <Navigation />
         <main>{children}</main>
         <Footer />
